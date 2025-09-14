@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-monitor-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-monitor-frontend
+  template:
+    metadata:
+      labels:
+        app: api-monitor-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: stanlyparker/api-monitor-frontend:latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

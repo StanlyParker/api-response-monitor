@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": false,
+    "isolatedModules": false,
+    "noEmit": false,
+    "types": ["node", "jest"]
+  },
+  "include": ["next-env.d.ts", "eslint.config.js", "**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "node_modules"]
+}

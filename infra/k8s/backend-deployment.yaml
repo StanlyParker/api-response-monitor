@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-monitor-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-monitor-backend
+  template:
+    metadata:
+      labels:
+        app: api-monitor-backend
+    spec:
+      containers:
+      - name: backend
+        image: stanlyparker/api-monitor-backend:latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 4000
+        envFrom:
+        - secretRef: 
+            name: api-monitor-secrets
