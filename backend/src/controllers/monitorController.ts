@@ -14,7 +14,7 @@ export async function createMonitor(req: Request, res: Response) {
     let message = 'Unknown error';
     if (err instanceof Error) {
       message = err.message;
-    }
+    } else {
     res.status(400).json({ error: message });
   }
 }
